@@ -1,0 +1,115 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-12-02 15:16:38.609085",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "column_break_jld6q",
+  "column_break_skjrr",
+  "section_break_kduh1",
+  "from_date_rate_update",
+  "column_break_jivns",
+  "old_blanket_order",
+  "column_break_vjcqy",
+  "new_blanket_order",
+  "section_break_pyb6x",
+  "item_details",
+  "column_break_avrnj",
+  "sales_invoice_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer ",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_jld6q",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_skjrr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_kduh1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "from_date_rate_update",
+   "fieldtype": "Date",
+   "label": "From Date (Rate Update)"
+  },
+  {
+   "fieldname": "column_break_jivns",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "old_blanket_order",
+   "fieldtype": "Table MultiSelect",
+   "label": "Old Blanket Order",
+   "options": "Blanket Order Multi Select"
+  },
+  {
+   "fieldname": "column_break_vjcqy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "new_blanket_order",
+   "fieldtype": "Link",
+   "label": "New Blanket Order",
+   "options": "Blanket Order"
+  },
+  {
+   "fieldname": "section_break_pyb6x",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "item_details",
+   "fieldtype": "Table",
+   "label": "Item Details",
+   "options": "RAR Item Details"
+  },
+  {
+   "fieldname": "column_break_avrnj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sales_invoice_details",
+   "fieldtype": "Table",
+   "label": "Sales Invoice Details",
+   "options": "RAR Sales Invoice Details"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-12-02 15:47:44.183225",
+ "modified_by": "Administrator",
+ "module": "Supplementary Invoice",
+ "name": "Rate Adjustment Request",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
