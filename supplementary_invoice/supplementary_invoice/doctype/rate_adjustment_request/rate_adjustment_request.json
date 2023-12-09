@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:RAR-{new_blanket_order}-{##}",
  "creation": "2023-12-02 15:16:38.609085",
  "default_view": "List",
  "doctype": "DocType",
@@ -9,7 +10,12 @@
  "field_order": [
   "customer",
   "column_break_jld6q",
+  "customer_name",
   "column_break_skjrr",
+  "column_break_h0l45",
+  "column_break_onzzt",
+  "send_individual_invoice",
+  "send_bulk_invoice",
   "section_break_kduh1",
   "from_date_rate_update",
   "column_break_jivns",
@@ -17,9 +23,13 @@
   "column_break_vjcqy",
   "new_blanket_order",
   "section_break_pyb6x",
+  "check_all",
+  "section_break_kjz5f",
   "item_details",
   "column_break_avrnj",
-  "sales_invoice_details"
+  "get_invoice_details",
+  "sales_invoice_details",
+  "amended_from"
  ],
  "fields": [
   {
@@ -45,7 +55,8 @@
   {
    "fieldname": "from_date_rate_update",
    "fieldtype": "Date",
-   "label": "From Date (Rate Update)"
+   "label": "From Date (Rate Update)",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_jivns",
@@ -55,7 +66,8 @@
    "fieldname": "old_blanket_order",
    "fieldtype": "Table MultiSelect",
    "label": "Old Blanket Order",
-   "options": "Blanket Order Multi Select"
+   "options": "Blanket Order Multi Select",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_vjcqy",
@@ -65,7 +77,8 @@
    "fieldname": "new_blanket_order",
    "fieldtype": "Link",
    "label": "New Blanket Order",
-   "options": "Blanket Order"
+   "options": "Blanket Order",
+   "reqd": 1
   },
   {
    "fieldname": "section_break_pyb6x",
@@ -75,7 +88,8 @@
    "fieldname": "item_details",
    "fieldtype": "Table",
    "label": "Item Details",
-   "options": "RAR Item Details"
+   "options": "RAR Item Details",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_avrnj",
@@ -85,18 +99,80 @@
    "fieldname": "sales_invoice_details",
    "fieldtype": "Table",
    "label": "Sales Invoice Details",
-   "options": "RAR Sales Invoice Details"
+   "options": "RAR Sales Invoice Details",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "get_invoice_details",
+   "fieldtype": "Button",
+   "label": "Get Invoice Details"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Rate Adjustment Request",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "check_all",
+   "fieldtype": "Button",
+   "label": "Check All"
+  },
+  {
+   "fieldname": "section_break_kjz5f",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "send_individual_invoice",
+   "fieldtype": "Check",
+   "label": "Create Individual Debit/Credit Note"
+  },
+  {
+   "default": "0",
+   "fieldname": "send_bulk_invoice",
+   "fieldtype": "Check",
+   "label": "Generate Aggregate Report"
+  },
+  {
+   "fieldname": "column_break_h0l45",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_onzzt",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2023-12-02 15:47:44.183225",
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Sales Invoice",
+   "link_fieldname": "custom_rate_change_req_reference"
+  }
+ ],
+ "modified": "2023-12-08 11:48:19.612479",
  "modified_by": "Administrator",
  "module": "Supplementary Invoice",
  "name": "Rate Adjustment Request",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -105,7 +181,9 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "select": 1,
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],

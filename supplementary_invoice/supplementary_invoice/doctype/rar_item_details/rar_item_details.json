@@ -11,7 +11,9 @@
   "old_blanket_order",
   "column_break_cj9dx",
   "item_name",
-  "new_rate"
+  "new_rate",
+  "new_blanket_ord_name",
+  "check"
  ],
  "fields": [
   {
@@ -19,21 +21,24 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Item Code",
-   "options": "Item"
+   "options": "Item",
+   "read_only": 1
   },
   {
    "fieldname": "old_rate",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Old Rate",
-   "precision": "2"
+   "label": "Old Rate (as per old blanket order)",
+   "precision": "2",
+   "read_only": 1
   },
   {
    "fieldname": "old_blanket_order",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Old Blanket Order",
-   "options": "Blanket Order"
+   "label": "Old Blanket Order Name",
+   "options": "Blanket Order",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_cj9dx",
@@ -44,20 +49,36 @@
    "fieldname": "item_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Item Name"
+   "label": "Item Name",
+   "read_only": 1
   },
   {
    "fieldname": "new_rate",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "New Rate",
-   "precision": "2"
+   "label": "New Rate (as per New blanket order)",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new_blanket_ord_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "New Blanket Order Name",
+   "options": "Blanket Order",
+   "read_only": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "check",
+   "fieldtype": "Check",
+   "label": "check"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-12-02 15:30:28.120400",
+ "modified": "2023-12-05 17:16:59.326687",
  "modified_by": "Administrator",
  "module": "Supplementary Invoice",
  "name": "RAR Item Details",

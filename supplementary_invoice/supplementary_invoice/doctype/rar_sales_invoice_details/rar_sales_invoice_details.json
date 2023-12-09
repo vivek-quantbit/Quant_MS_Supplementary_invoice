@@ -8,15 +8,19 @@
  "field_order": [
   "item_code",
   "sale_date",
-  "qty",
-  "sales_order_ref",
-  "rate_difference",
-  "column_break_jo0kr",
-  "sales_invoice",
   "sales_invoice_rate",
+  "rate_difference",
+  "column_break_l5apd",
+  "item_name",
+  "qty",
   "new_rate",
+  "total_amount",
+  "section_break_oz6wk",
+  "sales_order_ref",
   "blanket_order_ref",
-  "total_amount"
+  "column_break_1cr9o",
+  "sales_invoice",
+  "new_blanket_order_name"
  ],
  "fields": [
   {
@@ -24,78 +28,111 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Item Code",
-   "options": "Item"
+   "options": "Item",
+   "read_only": 1
   },
   {
    "fieldname": "sale_date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Sale Date"
+   "label": "Sale Date",
+   "read_only": 1
   },
   {
    "fieldname": "qty",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Qty",
-   "precision": "2"
+   "label": "Sales Invoice Quantity",
+   "precision": "2",
+   "read_only": 1
   },
   {
    "fieldname": "sales_order_ref",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Sales Order Ref",
-   "options": "Sales Order"
+   "label": "Sales Order Reference",
+   "options": "Sales Order",
+   "read_only": 1
   },
   {
    "fieldname": "rate_difference",
-   "fieldtype": "Float",
+   "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Rate Difference",
-   "precision": "2"
-  },
-  {
-   "fieldname": "column_break_jo0kr",
-   "fieldtype": "Column Break"
+   "precision": "2",
+   "read_only": 1
   },
   {
    "fieldname": "sales_invoice",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Sales Invoice Ref",
-   "options": "Sales Invoice"
+   "label": "Sales Invoice Reference",
+   "options": "Sales Invoice",
+   "read_only": 1
   },
   {
    "fieldname": "sales_invoice_rate",
-   "fieldtype": "Float",
+   "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Sales Invoice Rate",
-   "precision": "2"
+   "precision": "2",
+   "read_only": 1
   },
   {
    "fieldname": "new_rate",
-   "fieldtype": "Data",
+   "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "New Rate"
-  },
-  {
-   "fieldname": "blanket_order_ref",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Blanket Order Ref",
-   "options": "Blanket Order"
+   "label": "New Rate (as per new blanket order)",
+   "precision": "2",
+   "read_only": 1
   },
   {
    "fieldname": "total_amount",
-   "fieldtype": "Float",
+   "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Total Amount",
-   "precision": "2"
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_oz6wk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "blanket_order_ref",
+   "fieldtype": "Link",
+   "label": "Blanket Order Reference",
+   "options": "Blanket Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_l5apd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "new_blanket_order_name",
+   "fieldtype": "Link",
+   "label": "New Blanket Order Name",
+   "options": "Blanket Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_1cr9o",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-12-02 15:30:17.799849",
+ "modified": "2023-12-05 10:27:53.074083",
  "modified_by": "Administrator",
  "module": "Supplementary Invoice",
  "name": "RAR Sales Invoice Details",
