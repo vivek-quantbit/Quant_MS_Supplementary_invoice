@@ -12,7 +12,9 @@
   "column_break_jld6q",
   "customer_name",
   "column_break_skjrr",
+  "company",
   "column_break_h0l45",
+  "date",
   "column_break_onzzt",
   "send_individual_invoice",
   "send_bulk_invoice",
@@ -65,7 +67,7 @@
   {
    "fieldname": "old_blanket_order",
    "fieldtype": "Table MultiSelect",
-   "label": "Old Blanket Order",
+   "label": "Old Open Order",
    "options": "Blanket Order Multi Select",
    "reqd": 1
   },
@@ -76,8 +78,8 @@
   {
    "fieldname": "new_blanket_order",
    "fieldtype": "Link",
-   "label": "New Blanket Order",
-   "options": "Blanket Order",
+   "label": "New Open Order",
+   "options": "Open Order",
    "reqd": 1
   },
   {
@@ -153,6 +155,20 @@
   {
    "fieldname": "column_break_onzzt",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
@@ -160,10 +176,10 @@
  "links": [
   {
    "link_doctype": "Sales Invoice",
-   "link_fieldname": "custom_rate_change_req_reference"
+   "link_fieldname": "custom_rate_adjustment_request"
   }
  ],
- "modified": "2023-12-08 11:48:19.612479",
+ "modified": "2024-08-12 11:24:02.811414",
  "modified_by": "Administrator",
  "module": "Supplementary Invoice",
  "name": "Rate Adjustment Request",

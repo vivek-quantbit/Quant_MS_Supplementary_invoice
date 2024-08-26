@@ -109,8 +109,8 @@
   {
    "fieldname": "blanket_order_ref",
    "fieldtype": "Link",
-   "label": "Blanket Order Reference",
-   "options": "Blanket Order",
+   "label": "Open Order Reference",
+   "options": "Open Order",
    "read_only": 1
   },
   {
@@ -120,8 +120,8 @@
   {
    "fieldname": "new_blanket_order_name",
    "fieldtype": "Link",
-   "label": "New Blanket Order Name",
-   "options": "Blanket Order",
+   "label": "New Open Order Name",
+   "options": "Open Order",
    "read_only": 1
   },
   {
@@ -132,7 +132,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-12-05 10:27:53.074083",
+ "modified": "2024-08-10 17:54:16.451002",
  "modified_by": "Administrator",
  "module": "Supplementary Invoice",
  "name": "RAR Sales Invoice Details",

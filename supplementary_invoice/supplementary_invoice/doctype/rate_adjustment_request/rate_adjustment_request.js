@@ -4,15 +4,39 @@ frappe.ui.form.on('Rate Adjustment Request', {
     setup: function(frm) {
 		$('.layout-side-section').hide();
 		$('.layout-main-section-wrapper').css('margin-left', '0');
-        frm.fields_dict.old_blanket_order.get_query = function(doc, cdt, cdn) {
+        // frm.fields_dict.old_blanket_order.get_query = function(doc, cdt, cdn) {
+        //     return {
+        //         filters: [
+        //             ['Blanket Order', 'customer', '=', frm.doc.customer],
+		// 			['Blanket Order', 'docstatus', '=', '1'],
+		// 			['Blanket Order', 'blanket_order_type', '=', 'Selling']
+        //         ]
+        //     }; 
+        // };
+		frm.fields_dict.old_blanket_order.get_query = function(doc, cdt, cdn) {
             return {
                 filters: [
-                    ['Blanket Order', 'customer', '=', frm.doc.customer],
-					['Blanket Order', 'docstatus', '=', '1'],
-					['Blanket Order', 'blanket_order_type', '=', 'Selling']
+                    ['Open Order', 'customer', '=', frm.doc.customer],
+					['Open Order', 'docstatus', '=', '1'],
+					['Open Order', 'blanket_order_type', '=', 'Selling']
                 ]
             }; 
         };
+		// frm.set_query("new_blanket_order", function(doc) {
+		// 	var old_blanket_order_li= [];	
+		// 	frm.doc.old_blanket_order.forEach(function(row) {
+		// 		old_blanket_order_li.push(row.old_blanket_order);
+		// 	});
+		// 	return{
+		// 			filters: [    
+		// 				['Blanket Order', 'customer', '=', frm.doc.customer],
+		// 				['Blanket Order', 'name','not in', old_blanket_order_li],
+		// 				['Blanket Order', 'docstatus', '=', '1'],
+		// 				['Blanket Order', 'from_date', '>=', frm.doc.from_date_rate_update],
+		// 				['Blanket Order', 'blanket_order_type', '=', 'Selling']
+		// 				]
+		// 	};
+		// });
 		frm.set_query("new_blanket_order", function(doc) {
 			var old_blanket_order_li= [];	
 			frm.doc.old_blanket_order.forEach(function(row) {
@@ -20,11 +44,11 @@ frappe.ui.form.on('Rate Adjustment Request', {
 			});
 			return{
 					filters: [    
-						['Blanket Order', 'customer', '=', frm.doc.customer],
-						['Blanket Order', 'name','not in', old_blanket_order_li],
-						['Blanket Order', 'docstatus', '=', '1'],
-						['Blanket Order', 'from_date', '>=', frm.doc.from_date_rate_update],
-						['Blanket Order', 'blanket_order_type', '=', 'Selling']
+						['Open Order', 'customer', '=', frm.doc.customer],
+						['Open Order', 'name','not in', old_blanket_order_li],
+						['Open Order', 'docstatus', '=', '1'],
+						['Open Order', 'from_date', '>=', frm.doc.from_date_rate_update],
+						['Open Order', 'blanket_order_type', '=', 'Selling']
 						]
 			};
 		});
